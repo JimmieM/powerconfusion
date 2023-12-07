@@ -11,4 +11,4 @@ Open the Power Confusion UI and select your Target as your tracked member. You'l
 The Add-on track classes cooldowns.
 
 The available cooldowns are:
-Beast Mastery Hunter:
+// todo add list lol

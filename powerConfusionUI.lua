@@ -24,7 +24,6 @@ end
 
 local function setTargetInfo()
     if UnitExists("target") then
-
         local name, server = UnitName("target")
         local targetName = name;
         if server then
@@ -43,14 +42,14 @@ end
 
 
 UIFrame = CreateFrame("Frame", "PowerConfusionUI", UIParent)
-UIFrame:SetSize(300, 400) -- Width, Height
-UIFrame:SetPoint("CENTER") -- Position on the screen
+UIFrame:SetSize(300, 400)
+UIFrame:SetPoint("CENTER") 
 UIFrame:SetMovable(true)
 UIFrame:EnableMouse(true)
 UIFrame:RegisterForDrag("LeftButton")
 UIFrame:SetScript("OnDragStart", UIFrame.StartMoving)
 UIFrame:SetScript("OnDragStop", UIFrame.StopMovingOrSizing)
--- Create the button
+
 local button = CreateFrame("Button", nil, UIFrame, "GameMenuButtonTemplate")
 button:SetSize(100, 30)
 button:SetPoint("TOP", UIFrame, "TOP", 0, 0)
@@ -63,12 +62,10 @@ targetInfoText:SetPoint("TOP", button, "BOTTOM", 0, -10)
 targetInfoText:SetText("No target selected.")
 
 
--- Set script for button click
 button:SetScript("OnClick", function()
     setTargetInfo()
 end)
 
--- Create the list of class abilities
 createClassSpecList(UIFrame)
 
 UIFrame:Hide()
